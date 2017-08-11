@@ -3,6 +3,7 @@ all:
 
 
 re:
+	make clean
 	pdflatex main.tex
 	bibtex main.aux
 	pdflatex main.tex
