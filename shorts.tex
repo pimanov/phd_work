@@ -23,8 +23,8 @@
  #2 \left| #3 \vphantom{#1#2} \right>} % for Dirac matrix elements
 \newcommand{\grad}[1]{\nabla #1} % for gradient
 \let\divsymb=\div % rename builtin command \div to \divsymb
-\renewcommand{\div}[1]{\nabla \cdot #1} % for divergence
-\newcommand{\curl}[1]{\nabla \times #1} % for curl
+%\renewcommand{\div}[1]{\nabla \cdot #1} % for divergence
+%\newcommand{\curl}[1]{\nabla \times #1} % for curl
 \let\baraccent=\= % rename builtin command \= to \baraccent
 \renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
 \renewcommand{\phi}{\varphi}
@@ -43,8 +43,11 @@
 \def\d{\partial}
 \def\om{\ensuremath{\mbox{\boldmath$\omega$}}} 
 \def\Om{\ensuremath{\mbox{\boldmath$\Omega$}}} 
-\def\Laplace{\mathop{}\!\mathbin\bigtriangleup}
-\def\rot{\operatorname{rot}}
-\def\div{\operatorname{div}}
+\def\rot{\mathop{}\!\operatorname{rot}}
+\def\div{\mathop{}\!\operatorname{div}}
+%\def\grad{\mathop{}\!\operatorname{grad}}
+\def\grad{\nabla}
+%\def\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+\def\Laplace{\mathop{}\!\Delta}
 \def\Re{\operatorname{Re}}
 \def\i{\uv{i}}
