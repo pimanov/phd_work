@@ -1135,7 +1135,7 @@ FUNCTION {author.before}
 {
   author empty$
     'skip$
-    {author num.names$ #4 <
+    {author num.names$ #4000 <
       {format.authors output
        new.sentence}
       'skip$
@@ -1172,7 +1172,7 @@ FUNCTION {author.after}
 {
   author empty$
     'skip$
-    {author num.names$ #3 >
+    {author num.names$ #3000 >
       {format.authors.after output
        new.semicolumn }
       'skip$
