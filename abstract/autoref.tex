@@ -1,0 +1,240 @@
+\documentclass[a4paper,14pt,
+russcorr,
+oneside]{extbook}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{layout}
+\usepackage{grfpaste}
+\usepackage{floatflt}
+\usepackage{datetime}
+\usepackage{eso-pic,calc} %for background
+\usepackage{graphicx}
+\usepackage{corrcounters}
+\usepackage[dvips]{geometry}
+\usepackage{longtable} % для разбиения таблицы на несколько страниц
+\usepackage{amssymb}
+%\usepackage{cite} % for good citation 1-4
+\usepackage{amsmath} %eqref command
+ %\usepackage{epstopdf} % eps in miktex
+\usepackage[toc,page]{appendix}
+\usepackage{hhline}
+\usepackage[shortlabels]{enumitem}
+\usepackage{wrapfig}
+\setlist[enumerate]{nosep,labelindent=2mm,label=\arabic*.,labelwidth=\widthof{\ref{last-item}},itemindent=6mm,leftmargin=5mm}
+
+\ifpdf\usepackage{epstopdf}\fi
+\let\bibfont\relax
+
+\usepackage{float}
+
+%\usepackage[style=gost-numeric, backend=biber, %language=auto,
+%  hyperref=auto,  autolang=other, sorting=none, movenames=false, %bibencoding=auto, %babel=other
+%]{biblatex}
+%\usepackage{csquotes}
+% Ссылки на работы соискателя включаются в общий список литературы
+%\let\citemy=\cite
+%\addbibresource{../bib/my.bib}
+%\newtoggle{bbx:boldentries}
+%\DeclareBibliographyCategory{boldentry}
+%\AtEveryBibitem{\ifboolexpr{togl {bbx:boldentries} and test {\ifcategory{boldentry}}}{\bfseries}{}}
+
+\makeatletter
+\bibliographystyle{../ugost2008.bst}
+\renewcommand{\@biblabel}[1]{#1.}
+\providecommand*{\BibDash}{}
+\makeatother
+
+\graphicspath{{fig/}}
+
+\usepackage[unicode,colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+
+%%---- Оформление: разбиение текста на разделы и список литературы -----%%
+
+\makeatletter   %% включение символа "@"
+
+%--- изменение шрифтов и интервалов в секциях, подсекциях и главах ---%
+\renewcommand{\section}{\@startsection{section}{1}
+{0pt}{3.5ex plus 1ex minus .2ex} {2.3ex
+plus.2ex}{\normalfont\large\bfseries}}
+%{2.3ex plus.2ex}{\normalfont\normalsize\bfseries}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}
+{0pt}{3.5ex plus 1ex minus .2ex} {2.3ex
+plus.2ex}{\normalfont\normalsize\bfseries}}
+%{2.3ex plus.2ex}{\normalfont\normalsize\slshape}}
+
+\renewcommand{\@makeschapterhead}[1]{%
+%\vspace*{0 pt}%
+{\parindent=0pt \raggedright \normalfont\Large\bfseries #1\par
+%\normalfont\normalsize\bfseries #1\par
+\nopagebreak \vspace{5 pt}}}
+
+%---------------------------------------------------------------------%
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}   %% задали вид нумерации формул
+\@addtoreset{equation}{section}
+
+%\renewcommand{\@oddhead}{{\normalfont\slshape\rightmark}\hfill}   %% вид верхнего колонтитула
+\renewcommand{\@oddhead}{}
+\renewcommand{\@oddfoot}{\hfill \thepage \hfill}          %% вид нижнего колонтитула
+
+\renewcommand{\@pnumwidth}{2em}   % увеличили пространство для номеров страниц в оглавлении
+
+\makeatother   %% выключение символа "@"
+%%----------------------------------------------------------------------%%
+
+
+\voffset=-1in
+\hoffset=-1in
+
+\topmargin=0.8cm                 %% высота верхнего поля
+\headheight=0.5cm
+\headsep=0.7cm
+\textheight=25.7cm %24.2cm       %% высота текста
+
+\oddsidemargin=1.75cm %2cm        %% ширина левого поля
+\textwidth=17.5cm                %% ширина текста
+
+\addto\captionsrussian{
+\def\figurename{Рис.}
+\def\tabname{Таблица}
+}
+
+\renewcommand{\baselinestretch}{1.28}      %% межстрочный интервал
+
+\renewcommand{\captionlinestretch}{1.28}   %% межстрочный интервал в подписях к рисункам
+\renewcommand{\captionfontsize}{\normalsize}   %% размер шрифта в подписях к рисункам
+\renewcommand{\captionwidth}{17.5cm}        %% ширина подписей к рисункам
+
+%\newcommand{\scr}{\scriptstyle}
+\newcommand{\ds}{\displaystyle}
+%\newcommand{\ts}{\textstyle}
+
+%\widowpenalty=10000\clubpenalty=10000   % запрет переноса первой/последней строки абзаца
+
+\unitlength=1mm
+%%-----------------------------------------------------------------------------%%
+
+\renewcommand{\theequation}{\arabic{equation}}
+\input{../shorts}
+
+\begin{document}
+
+\righthyphenmin=2 \sloppy
+
+\thispagestyle{empty}
+\pdfbookmark[-1]{Численное исследование локализованных турбулентных структур в трубах}{title:link}
+\centerline{МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ}
+\centerline{имени M.В. ЛОМОНОСОВА}
+\centerline{МЕХАНИКО--МАТЕМАТИЧЕСКИЙ ФАКУЛЬТЕТ}
+
+\vfill
+ \rightline{\emph{На правах рукописи}}
+
+%\begin{figure}[h]
+%  \raggedleft
+%  \includegraphics[width=5cm]{vin.jpg}
+%\end{figure}
+\vfill
+\vfill
+
+\centerline{\bf Пиманов Владимир Олегович} \vfill
+\centerline{\bf ЧИСЛЕННОЕ ИССЛЕДОВАНИЕ ЛОКАЛИЗОВАННЫХ}
+\centerline{\bf ТУРБУЛЕНТНЫХ СТРУКТУР В ТРУБАХ}
+ \centerline{\bf}
+ \centerline{\bf }
+\centerline{Специальность 01.02.05
+--- Механика жидкости, газа и плазмы} 
+\vfill \vfill
+\centerline{АВТОРЕФЕРАТ}
+\centerline{диссертации на соискание ученой степени} 
+\centerline{кандидата физико--математических наук} 
+\vfill \vfill \vfill \vfill 
+\centerline{Mосква -- 2018}
+\normalsize
+
+
+\newcommand{\vsp}{\vspace{0.25cm}}
+
+\newpage
+\righthyphenmin=100
+\thispagestyle{empty} \noindent Работа выполнена на кафедре гидромеханики механико-математического факультета МГУ имени М.В.~Ломоносова.
+\righthyphenmin=2
+
+\vsp
+
+\noindent \begin{tabular}{@{}p{5.8cm}p{11.3cm}@{}}
+Научный руководитель: & \textbf{Никитин Николай Васильевич}
+доктор физико-математических наук\vsp \\
+Научный консультант: & \textbf{Турков Владимир Андреевич}
+кандидат физико-математических наук, доцент\vsp \\
+Официальные оппоненты: & \textbf{Ильичев Андрей Теймуразович}
+доктор физико-математических наук, профессор,
+ведущий научный сотрудник Математического
+института имени В.А. Стеклова РАН, Москва\vsp\\
+&
+\textbf{Пушкарь Евгений Александрович}
+доктор физико-математических наук, профессор\vsp\\
+&
+\textbf{Райхер Юрий Львович}
+доктор физико-математических наук, профессор,
+заведующий лабораторией физики и механики
+мягкого вещества ИМСС УрО РАН, Пермь\vsp\\
+\end{tabular}
+\vspace{1mm}
+
+\noindent Защита состоится 16 июня 2017 г. в 15 часов 00 минут на
+заседании диссертационного совета МГУ.01.03 Московского
+государственного университета имени М.В.~Ломоносова по адресу:
+119991, ГСП--1, Москва, Ленинские горы, МГУ, д.~1, Главное здание, механико-математический
+факультет, аудитория 16-10.
+
+\vsp
+
+\noindent E--mail: \href{pelevina.daria@gmail.com}{pelevina.daria@gmail.com}
+
+\vsp
+
+\noindent С диссертацией можно ознакомиться в отделе диссертаций научной библиотеки МГУ имени М.В.~Ломоносова (Ломоносовский просп., д.~27) и на сайте ИАС <<ИСТИНА>>: \url{http://istina.msu.ru/dissertations/51263369/}.
+
+\vsp
+
+\noindent Автореферат разослан <<\underline{\hspace{1.0cm}}>> апреля 2017 г.
+
+\vsp
+
+\vfill
+
+\noindent\begin{tabular}{@{}p{10cm}@{}p{4cm}@{}p{3.5cm}@{}}
+Ученый секретарь
+
+диссертационного совета МГУ.01.03,
+
+кандидат физико-математических наук
+ &
+$\:$
+
+%\vspace{-4mm}
+%\includegraphics[width=3.5cm]{izm.jpg}
+ &
+$\:$
+
+$\:$
+
+\raggedleft  Д.А. Пелевина\\
+\end{tabular}
+
+\newpage
+\input description.tex
+\input content.tex
+\input conclusion.tex
+\input publications.tex
+
+\end{document}
+
+
+
+
+
+

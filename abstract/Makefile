@@ -1,6 +1,11 @@
 all: 
-	pdflatex abstract.tex
+	pdflatex autoref.tex
 
+re: clean
+	pdflatex autoref.tex
+	bibtex autoref.aux
+	pdflatex autoref.tex
+	pdflatex autoref.tex
 
 
 clean:
