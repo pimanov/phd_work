@@ -24,13 +24,13 @@
 %\bibliographystyle{mygost}
 %\bibliographystyle{gost71u-utf8}
 %\bibliographystyle{utf8gost705u}
-\bibliographystyle{ugost2008.bst}
+\bibliographystyle{ugost2008}
 %\bibliographystyle{utf8gost780u.bst}
 %\bibliographystyle{ugost2003.bst}
 
 \makeatletter
 \renewcommand{\@biblabel}[1]{#1.}
-\providecommand*{\BibDash}{}
+%\providecommand*{\BibDash}{}
 \makeatother
 
 % % Меняем везде перечисления на цифра.цифра
@@ -62,13 +62,9 @@
 \renewcommand{\topfraction}{0.9}
 \usepackage[pdfborder={0 0 0}]{hyperref}
 
-%\usepackage{titlesec}
-%\titleformat{\chapter}[block]{\LARGE\bfseries\filcenter}{}{1em}{}
-%\titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
-%\setcounter{secnumdepth}{0}
 \usepackage{titlesec}
-\titleformat{\chapter}[block]{\LARGE\bfseries\centering}{Глава \thechapter.}{1ex}{}
-\titleformat{\section}[block]{\Large\bfseries\centering}{\thesection.}{1ex}{}
+\titleformat{\chapter}[block]{\Large\bfseries\centering}{Глава \thechapter.}{1ex}{}
+\titleformat{\section}[block]{\normalsize\bfseries\centering}{\thesection.}{1ex}{}
 
 %-----------------------------------------------------------%
 
