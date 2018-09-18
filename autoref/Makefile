@@ -3,8 +3,7 @@ all:
 
 re: clean
 	pdflatex autoref.tex
-	bibtex autoref.aux
-	pdflatex autoref.tex
+	biber autoref
 	pdflatex autoref.tex
 
 

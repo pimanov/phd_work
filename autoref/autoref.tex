@@ -1,5 +1,5 @@
 \documentclass[a4paper,14pt,
-russcorr,
+%russcorr,
 oneside]{extbook}
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
@@ -22,33 +22,23 @@ oneside]{extbook}
 \usepackage[shortlabels]{enumitem}
 \usepackage{wrapfig}
 \usepackage{comment}
-\setlist[enumerate]{nosep,labelindent=2mm,label=\arabic*.,labelwidth=\widthof{\ref{last-item}},itemindent=6mm,leftmargin=5mm}
-
-\ifpdf\usepackage{epstopdf}\fi
-\let\bibfont\relax
-
 \usepackage{float}
 
-%\usepackage[style=gost-numeric, backend=biber, %language=auto,
-%  hyperref=auto,  autolang=other, sorting=none, movenames=false, %bibencoding=auto, %babel=other
-%]{biblatex}
-%\usepackage{csquotes}
-% Ссылки на работы соискателя включаются в общий список литературы
-%\let\citemy=\cite
-%\addbibresource{../bib/my.bib}
-%\newtoggle{bbx:boldentries}
-%\DeclareBibliographyCategory{boldentry}
-%\AtEveryBibitem{\ifboolexpr{togl {bbx:boldentries} and test {\ifcategory{boldentry}}}{\bfseries}{}}
+\usepackage[style=gost-numeric, backend=biber, hyperref=auto, autolang=other, sorting=none, movenames=false]{biblatex}
+\usepackage{csquotes}
+\addbibresource{../bib/my.bib}
+\addbibresource{../bib/my_conf.bib}
 
-\makeatletter
-\bibliographystyle{../ugost2008.bst}
-\renewcommand{\@biblabel}[1]{#1.}
-\providecommand*{\BibDash}{}
-\makeatother
+%\makeatletter
+%\bibliographystyle{../ugost2008.bst}
+%\renewcommand{\@biblabel}[1]{#1.}
+%\providecommand*{\BibDash}{}
+%\makeatother
 
 \graphicspath{{fig/}, {../ch2_figures/}, {../ch3_figures/}, {../ch4_figures/}}
 
-\usepackage[unicode,colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+%\usepackage[unicode,colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{hyperref}
 
 %%---- Оформление: разбиение текста на разделы и список литературы -----%%
 
